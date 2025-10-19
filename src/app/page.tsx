@@ -1,8 +1,18 @@
 import Image from 'next/image';
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Hero Section*/}
+      {/* 言語切り替えボタン（オプション） */}
+      <div className="fixed top-4 right-4 z-50">
+        <a
+          href="/en"
+          className="bg-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
+          🌐 English
+        </a>
+      </div>
+
+      {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center max-w-4xl mx-auto">
           {/* キャッチコピー */}
@@ -11,19 +21,21 @@ export default function Home() {
             <br />
             <span className="text-blue-600">顧客管理CRM</span>
           </h1>
+
           <p className="text-xl md:text-2xl text-gray-600 mb-8">
             メンテナンス時期を見逃さない
             <br />
             自動リマインダーで営業機会を最大化
           </p>
 
-          {/* メインCTA */}
+          {/* メインCTA - 修正: bg-blue-600 */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <a
               href="#download"
-              className="inline-block pg-blue-600 hover:bg-blue-700 text-white text-xl font-bold py-4 px-8 rounded-lg transition-colors shadow-lg">
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold py-4 px-8 rounded-lg transition-colors shadow-lg">
               無料ダウンロード（Windows版）
             </a>
+
             <a
               href="#features"
               className="inline-block bg-white hover:bg-gray-50 text-blue-600 text-xl font-bold py-4 px-8 rounded-lg border-2 border-blue-600 transition-colors">
@@ -31,7 +43,7 @@ export default function Home() {
             </a>
           </div>
 
-          {/* スクリーンショット (メイン) */}
+          {/* スクリーンショット（メイン） */}
           <div className="rounded-lg shadow-2xl overflow-hidden border-4 border-gray-200">
             <Image
               src="/screenshots/dashboard.png"
@@ -50,74 +62,88 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 主な機能セクション */}
-      <section id="features" className="bg-white py-16 md:py-24">
+      {/* 主な機能セクション - 改善版 */}
+      <section id="features" className="bg-gray-50 py-16 md:py-24">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-center text-gray-900 mb-20">
             主な機能
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto space-y-24">
             {/* 機能1: 顧客管理 */}
-            <div className="text-center">
-              <div className="mb-6">
-                <Image
-                  src="/screenshots/customer-list.png"
-                  alt="顧客管理画面"
-                  width={800}
-                  height={600}
-                  className="rounded-lg shadow-lg border-2 border-gray-200 w-full h-auto"
-                />
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="p-8 md:p-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="text-4xl">📋</div>
+                  <h3 className="text-3xl font-bold text-gray-900">顧客管理</h3>
+                </div>
+                <p className="text-xl text-gray-600 mb-8">
+                  工務店・お得意先の情報を一元管理。
+                  <br />
+                  サービス履歴も簡単に記録。
+                </p>
+                <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200">
+                  <Image
+                    src="/screenshots/customer-list.png"
+                    alt="顧客管理画面"
+                    width={1400}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                📋 顧客管理
-              </h3>
-              <p className="text-lg text-gray-600">
-                工務店・お得意先の情報を一元管理。
-                <br />
-                サービス履歴も簡単に記録。
-              </p>
             </div>
+
             {/* 機能2: 自動リマインダー */}
-            <div className="text-center">
-              <div className="mb-6">
-                <Image
-                  src="/screenshots/reminder.png"
-                  alt="自動リマインダー画面"
-                  width={800}
-                  height={600}
-                  className="rounded-lg shadow-lg border-2 border-gray-200 w-full h-auto"
-                />
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="p-8 md:p-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="text-4xl">⏰</div>
+                  <h3 className="text-3xl font-bold text-gray-900">
+                    自動リマインダー
+                  </h3>
+                </div>
+                <p className="text-xl text-gray-600 mb-8">
+                  メンテナンス時期を自動判定。
+                  <br />
+                  営業機会を見逃しません。
+                </p>
+                <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200">
+                  <Image
+                    src="/screenshots/maintenance.png"
+                    alt="自動リマインダー画面"
+                    width={1400}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                ⏰ 自動リマインダー
-              </h3>
-              <p className="text-lg text-gray-600">
-                メンテナンス時期を自動判定。
-                <br />
-                営業機会を見逃しません。
-              </p>
             </div>
 
             {/* 機能3: Email連携 */}
-            <div className="text-center">
-              <div className="mb-6">
-                <Image
-                  src="/screenshots/email-sending.png"
-                  alt="Email連携画面"
-                  width={800}
-                  height={600}
-                  className="rounded-lg shadow-lg border-2 border-gray-200 w-full h-auto"
-                />
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="p-8 md:p-12">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="text-4xl">📧</div>
+                  <h3 className="text-3xl font-bold text-gray-900">
+                    Email連携
+                  </h3>
+                </div>
+                <p className="text-xl text-gray-600 mb-8">
+                  ワンクリックでリマインダーメール送信。
+                  <br />
+                  顧客へのアプローチを効率化。
+                </p>
+                <div className="rounded-lg overflow-hidden shadow-lg border border-gray-200">
+                  <Image
+                    src="/screenshots/email-sending.png"
+                    alt="Email連携画面"
+                    width={1400}
+                    height={900}
+                    className="w-full h-auto"
+                  />
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                📧 Email連携
-              </h3>
-              <p className="text-lg text-gray-600">
-                ワンクリックでリマインダーメール送信。
-                <br />
-                顧客へのアプローチを効率化。
-              </p>
             </div>
           </div>
         </div>
@@ -130,59 +156,62 @@ export default function Home() {
             使い方は簡単3ステップ
           </h2>
 
-          <div className="flex items-start gap-6 pb-9">
-            {/* ステップ1 */}
-            <div className="flex-shrink-0 w-16 h-16 bg-blue-600 text-white text-2xl font-bold rounded-full flex items-center justify-center">
-              1
+          <div className="max-w-4xl mx-auto space-y-12">
+            {/* Step 1 */}
+            <div className="flex items-start gap-6">
+              <div className="flex-shrink-0 w-16 h-16 bg-blue-600 text-white text-2xl font-bold rounded-full flex items-center justify-center">
+                1
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  ダウンロード・インストール
+                </h3>
+                <p className="text-lg text-gray-600">
+                  Windows版インストーラーをダウンロードして実行。
+                  <br />
+                  数クリックで完了します。
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                ダウンロード・インストール
-              </h3>
-              <p className="text-lg text-gray-600">
-                Windows版インストーラーをダウンロードして実行。
-                <br />
-                数クリックで完了します。
-              </p>
-            </div>
-          </div>
 
-          {/* ステップ2 */}
-          <div className="flex items-start gap-6 pb-9">
-            <div className="flex-shrink-0 w-16 h-16 bg-blue-600 text-white text-2xl font-bold rounded-full flex items-center justify-center">
-              2
+            {/* Step 2 */}
+            <div className="flex items-start gap-6">
+              <div className="flex-shrink-0 w-16 h-16 bg-blue-600 text-white text-2xl font-bold rounded-full flex items-center justify-center">
+                2
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  顧客情報を登録
+                </h3>
+                <p className="text-lg text-gray-600">
+                  工務店の会社名・連絡先を登録。
+                  <br />
+                  サービス履歴も一緒に記録できます。
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                顧客情報を登録
-              </h3>
-              <p className="text-lg text-gray-600">
-                工務店の会社名・連絡先を登録。
-                <br />
-                サービス履歴も一緒に記録できます。
-              </p>
-            </div>
-          </div>
-          {/* ステップ3 */}
-          <div className="flex items-start gap-6 pb-9">
-            <div className="flex-shrink-0 w-16 h-16 bg-blue-600 text-white text-2xl font-bold rounded-full flex items-center justify-center">
-              3
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                リマインダーを設定
-              </h3>
-              <p className="text-lg text-gray-600">
-                メンテナンス予測から自動で推奨。
-                <br />
-                時期が来たら自動通知されます。
-              </p>
+
+            {/* Step 3 */}
+            <div className="flex items-start gap-6">
+              <div className="flex-shrink-0 w-16 h-16 bg-blue-600 text-white text-2xl font-bold rounded-full flex items-center justify-center">
+                3
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  リマインダーを設定
+                </h3>
+                <p className="text-lg text-gray-600">
+                  メンテナンス予測から自動で推奨。
+                  <br />
+                  時期が来たら自動通知されます。
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ダウロードセクション */}
+      {/* ダウンロードセクション */}
       <section id="download" className="bg-blue-600 py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
@@ -216,12 +245,12 @@ export default function Home() {
       {/* フィードバックセクション */}
       <section className="bg-white py-16 md:py-24">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8">
+          <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-8 whitespace-nowrap">
             ご意見・ご要望をお聞かせください
           </h2>
 
           <p className="text-xl text-gray-600 mb-12">
-            現在べータ版を開発中です。
+            現在ベータ版を開発中です。
             <br />
             皆様のフィードバックをお待ちしています。
           </p>
@@ -231,11 +260,10 @@ export default function Home() {
               href="https://forms.gle/[YOUR_FORM_ID]"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-green-600
-            hover:bg-green-700 text-white text-xl font-bold py-4 px-8 rounded-lg
-            transition-colors">
+              className="inline-block bg-green-600 hover:bg-green-700 text-white text-xl font-bold py-4 px-8 rounded-lg transition-colors">
               📝 フィードバックを送る
             </a>
+
             <a
               href="https://github.com/[YOUR_USERNAME]/[YOUR_REPO]/issues"
               target="_blank"
@@ -246,8 +274,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* フッター */}
-      <footer className="bg-gray-900  text-white py-12">
+      <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
@@ -298,7 +327,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 text-center text-gray-400">
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>&copy; 2025 建築業向けCRM. All rights reserved.</p>
           </div>
         </div>
