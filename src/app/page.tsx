@@ -31,8 +31,9 @@ export default function Home() {
           {/* メインCTA - 修正: bg-blue-600 */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <a
-              href="#download"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold py-4 px-8 rounded-lg transition-colors shadow-lg">
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xl font-bold py-4 px-8 rounded-lg transition-colors shadow-lg"
+              href="https://github.com/NanaChiki/crm-app/releases/latest"
+              target="_blank">
               無料ダウンロード（Windows版）
             </a>
 
@@ -223,7 +224,7 @@ export default function Home() {
           </p>
 
           <a
-            href="https://github.com/[YOUR_USERNAME]/[YOUR_REPO]/releases/latest"
+            href="https://github.com/NanaChiki/crm-app/releases/latest"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white hover:bg-gray-100 text-blue-600 text-2xl font-bold py-6 px-12 rounded-lg transition-colors shadow-xl">
@@ -257,7 +258,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://forms.gle/[YOUR_FORM_ID]"
+              href="https://forms.gle/3HoMGfutUFX17eTe6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-green-600 hover:bg-green-700 text-white text-xl font-bold py-4 px-8 rounded-lg transition-colors">
@@ -265,7 +266,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://github.com/[YOUR_USERNAME]/[YOUR_REPO]/issues"
+              href="https://github.com/NanaChiki/crm-app/issues"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-gray-800 hover:bg-gray-900 text-white text-xl font-bold py-4 px-8 rounded-lg transition-colors">
@@ -307,8 +308,9 @@ export default function Home() {
                 </li>
                 <li>
                   <a
-                    href="https://github.com/[YOUR_USERNAME]/[YOUR_REPO]"
-                    className="hover:text-white transition-colors">
+                    href="https://github.com/NanaChiki/crm-app/"
+                    className="hover:text-white transition-colors"
+                    target="_blank">
                     GitHub
                   </a>
                 </li>
@@ -319,9 +321,9 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-4">お問い合わせ</h3>
               <p className="text-gray-400">
                 <a
-                  href="mailto:your-email@example.com"
+                  href="mailto:crm.tool.construction@gmail.com"
                   className="hover:text-white transition-colors">
-                  your-email@example.com
+                  crm.tool.construction@gmail.com
                 </a>
               </p>
             </div>
