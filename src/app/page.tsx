@@ -3,15 +3,6 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* 言語切り替えボタン（オプション） */}
-      <div className="fixed top-4 right-4 z-50">
-        <a
-          href="/en"
-          className="bg-white px-4 py-2 rounded-lg shadow-lg hover:bg-gray-50 transition-colors text-sm font-medium text-gray-700">
-          🌐 English
-        </a>
-      </div>
-
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center max-w-4xl mx-auto">
